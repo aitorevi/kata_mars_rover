@@ -77,10 +77,9 @@ class Rover(private var position: Position, private var direction: DIRECTION, pr
          this.direction == DIRECTION.NORTH && movement == MOVE.BACKWARD ||
                 this.direction == DIRECTION.SOUTH && movement == MOVE.FORWARD
 
-    private fun moveOutOfUpperLimit(movement: MOVE): Boolean {
-        return direction == DIRECTION.NORTH && movement == MOVE.FORWARD ||
-                direction == DIRECTION.SOUTH && movement == MOVE.BACKWARD
-    }
+    private fun moveOutOfUpperLimit(movement: MOVE) =
+         this.direction == DIRECTION.NORTH && movement == MOVE.FORWARD ||
+                this.direction == DIRECTION.SOUTH && movement == MOVE.BACKWARD
 
     private fun nextDirectionToFace(command: TURN): DIRECTION {
         val cardinalPoints = listOf(
